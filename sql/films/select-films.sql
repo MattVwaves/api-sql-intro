@@ -12,6 +12,24 @@ SELECT * FROM films WHERE genre = 'SciFi' OR genre = 'Western'
 SELECT * FROM films WHERE genre = 'Western' AND year < 2000 
 SELECT * FROM films WHERE title LIKE '%Matrix%'
 
+// extension one
+
+SELECT AVG(score) FROM films
+SELECT COUNT(id) FROM films
+SELECT AVG(score) FROM films GROUP BY genre
+
+// extension two
+
+SELECT * FROM films2 INNER JOIN directors ON directors.id = films2.director_id
+
+// extension three
+
+SELECT name, COUNT(name) 
+as number_films_directed 
+FROM films2 INNER JOIN directors ON directors.id = films2.director_id 
+GROUP BY directors.name
+
+
 
 
 
